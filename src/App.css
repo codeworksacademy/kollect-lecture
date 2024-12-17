@@ -1,0 +1,133 @@
+:root {
+  --team-color: #e8ff74;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0;
+
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+ul.collection {
+  min-height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.player-card {
+  position: relative;
+  display: inline-block;
+  margin: .5rem;
+  padding: .5rem;
+  border: 4px outset var(--team-color);
+  outline: solid 3px #26292c;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #26292c;
+  color: var(--team-color);
+  box-shadow: 0px 3px 3px #16161d66;
+  width: 13em;
+  user-select: none;
+  animation: fadeIn .5s ease;
+
+  &.exit {
+    animation: fadeOut .5s ease;
+  }
+
+  img {
+    border-radius: 3px;
+    max-width: 100%;
+  }
+
+  .stats {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+  }
+
+  .card-count {
+    position: absolute;
+    right: .5rem;
+    top: -2rem;
+    padding: .7rem;
+    border-radius: 50rem;
+    background-color: inherit;
+    color: inherit;
+    border: 2px outset;
+    border-color: inherit;
+    outline: 2px solid #26292c;
+    font-family: monospace;
+    height: 1rem;
+    aspect-ratio: 1/1;
+  }
+
+  h2 {
+    margin: 5px;
+    font-family: Tahoma, sans-serif;
+    color: whitesmoke;
+  }
+}
+
+
+
+.clickable {
+  cursor: pointer;
+  transition: all .2s ease;
+
+  img {
+    user-drag: none;
+    -webkit-user-drag: none;
+  }
+
+  &:hover {
+    transform: translate(0px, -3px);
+    box-shadow: 0px 6px 4px #16161d66;
+  }
+
+}
+
+.total {
+  background-color: rgb(0, 0, 0);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 48px;
+  padding: 8px 16px;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
